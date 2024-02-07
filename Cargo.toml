@@ -6,6 +6,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+exitfailure = "0.5.1"
+iced = { version = "0.10.0", features = [] }
 reqwest = { version = "0.11.24", features = ["json"] }
 serde = { version = "1.0.196", features = ["derive"] }
+tokio = { version = "1.36.0", features = ["rt", "rt-multi-thread", "macros"] }
 winit = "0.29.10"
