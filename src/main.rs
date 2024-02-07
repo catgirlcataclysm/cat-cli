@@ -1,6 +1,7 @@
 use exitfailure::ExitFailure;
 use serde::Deserialize;
 use reqwest::get;
+use inline_colorization::*;
 
 #[derive(Deserialize)]
 struct ImgData {
@@ -21,6 +22,6 @@ impl ImgData {
 async fn main() -> Result<(), ExitFailure> {
     // Queries the API @ https://api.thecatapi.com/v1/images/search to get ImgData for a random cat image
     let img = ImgData::fetch().await?.unwrap();
-    println!("URL: {} \nResolution: {}x{}", img.url, img.width, img.height);
+    println!("{style_bold}{color_green}URL: {color_reset}{style_reset}{color_blue}{}{color_reset} \n{style_bold}{color_green}Resolution:{color_reset}{style_reset} {color_blue}{}x{}{color_reset}", img.url, img.width, img.height);
     Ok(())
 }
