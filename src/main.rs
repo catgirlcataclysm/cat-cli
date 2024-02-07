@@ -10,8 +10,9 @@ struct ImgData {
 }
 
 impl ImgData {
+    // Update url to include user input as to how many cats they want
     async fn fetch() -> Result<Option<ImgData>, ExitFailure> {
-        let img = get("https://api.thecatapi.com/v1/images/search").await?.json::<(ImgData,)>().await?;
+        let img = get("https://api.thecatapi.com/v1/images/search?limit=1").await?.json::<(ImgData,)>().await?;
         Ok(Some(img.0))
     }  
 }
