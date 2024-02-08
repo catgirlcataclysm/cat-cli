@@ -33,7 +33,7 @@ async fn main() -> Result<(), ExitFailure> {
     } else {
         match arg[1].as_str().trim() {
             "--nocolor" | "-n" => println!("URL: {} \nResolution: {}x{}", img.url, img.width, img.height),
-            "--help" | "-h" => println!("--help/-h      displays the current help page\n--nocolor/-n    disables colored text in response"),
+            "--help" | "-h" => println!("--help/-h      displays the help page\n--nocolor/-n    disables colored text in response"),
             _ => {
                 println!("Invalid argument. To see usage, use --help");
                 exit(-1);
