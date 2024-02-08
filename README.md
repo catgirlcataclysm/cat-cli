@@ -2,4 +2,7 @@
 C. A. T. (Cat Acquiring Tool) for cli uses.
 
 # Usage
-``cat-cli --count/c *amount of image results*`` ***UNFINISHED*** 
+``cat-cli``
+## arguments
+``--nocolor  disables colored text in response``
+``--help  displays the help page``
