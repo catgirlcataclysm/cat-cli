@@ -9,10 +9,12 @@ edition = "2021"
 exitfailure = "0.5.1"
 image = "0.24.8"
 inline_colorization = "0.1.6"
-reqwest = { version = "0.11.24", features = ["json"] }
+reqwest = { version = "0.11.24", features = ["json", "blocking"] }
 serde = { version = "1.0.196", features = ["derive"] }
-sixel-rs = "0.3.3"
 tokio = { version = "1.36.0", features = ["rt", "rt-multi-thread", "macros"] }
+
+[target.'cfg(linux)'.dependencies]
+viuer = { version = "0.7.1", features = ["sixel"] }
 
 [profile.release]
 strip = true

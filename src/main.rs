@@ -8,9 +8,7 @@ mod img;
 async fn main() -> Result<(), ExitFailure> {
     // Queries the API @ https://api.thecatapi.com/v1/images/search to get ImgData for a random cat image
     let img = img::ImgData::fetch().await?.expect("Can't reach the cat API.");
-    
-    img::ImgData::sixel(&img.url).await?;
-    
+        
     let arg: Vec<String> = std::env::args().collect();
     if arg.len() >= 3 {
         println!("Too many arguments. To see usage, use --help");
