@@ -4,6 +4,10 @@ C. A. T. (Cat Acquiring Tool) for cli uses.
 # Usage
 ``cat-cli``
 ## arguments
-```--nocolor  disables colored text in response```
+```--nocolor/-c  disables colored text in response```
 
-```--help  displays the help page```
+```--help/-h  displays the help page```
+
+
+
+```--noimage/-i  disables the showing of the image in supported terminals```
