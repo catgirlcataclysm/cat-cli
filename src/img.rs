@@ -1,4 +1,6 @@
+#[cfg(linux)]
 use viuer::{print, Config};
+
 use serde::Deserialize;
 use exitfailure::ExitFailure;
 use reqwest::get;
@@ -16,6 +18,7 @@ impl ImgData {
         let img = get("https://api.thecatapi.com/v1/images/search").await?.json::<(ImgData,)>().await?;
         Ok(Some(img.0))
     }
+    #[cfg(linux)]
     pub async fn print_img(url: &String) -> Result<(), ExitFailure> {
         let img_bytes = get(url).await?.bytes().await?;
         let img = image::load_from_memory(&img_bytes)?;
