@@ -1,3 +1,4 @@
+use viuer::{print, Config};
 use serde::Deserialize;
 use exitfailure::ExitFailure;
 use reqwest::get;
@@ -15,10 +16,15 @@ impl ImgData {
         let img = get("https://api.thecatapi.com/v1/images/search").await?.json::<(ImgData,)>().await?;
         Ok(Some(img.0))
     }
-    async fn gen_img(url: String) -> Result<(), ExitFailure> {
-        let res = get(url).await.expect("Failed to get image").bytes().await?;
-        let byte_vec = Vec::from(res);
-        let img = image::DynamicImage::ImageRgba8((/*RGBAU8VEC*/, byte_vec));
+    pub async fn print_img(url: &String) -> Result<(), ExitFailure> {
+        let img_bytes = get(url).await?.bytes().await?;
+        let img = image::load_from_memory(&img_bytes)?;
+        let conf = Config {
+            width: Some(80),
+            height: Some(25),
+            ..Default::default()
+        };
+        print(&img, &conf).expect("Image printing failed.");
         Ok(())
     }
 }
