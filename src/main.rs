@@ -39,7 +39,7 @@ async fn main() -> Result<(), ExitFailure> {
                 
                 println!("URL: {} \nResolution: {}x{}", &img.url, &img.width, &img.height);
             }
-            "--help" | "-h" => println!("--help/-h      displays the help page\n--nocolor/-n    disables colored text in response"),
+            "--help" | "-h" => println!("--help/-h      displays the help page\n--nocolor/-c    disables colored text in response\n--noimage/-i  disables the showing of the image in supported terminals"),
             
             "--noimage" | "-i" => println!("{style_bold}{color_green}URL: {color_reset}{style_reset}{color_blue}{}{color_reset} \n{style_bold}{color_green}Resolution:{color_reset}{style_reset} {color_blue}{}x{}{color_reset}", &img.url, &img.width, &img.height), 
             _ => {
