@@ -9,8 +9,8 @@ use reqwest::get;
 #[derive(Deserialize)]
 pub struct ImgData {
     pub url: String,
-    pub width: usize,
-    pub height: usize,
+    pub width: u32,
+    pub height: u32,
 }
 
 impl ImgData {
@@ -23,8 +23,8 @@ impl ImgData {
         let img_bytes = get(url).await?.bytes().await?;
         let img = image::load_from_memory(&img_bytes)?;
         let conf = Config {
-            width: Some(80),
-            height: Some(25),
+            width: Some(128),
+            height: Some(72),
             ..Default::default()
         };
         print(&img, &conf).expect("Image printing failed.");
