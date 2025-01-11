@@ -4,6 +4,13 @@ use inline_colorization::*;
 
 mod img;
 
+// TODO
+// DOWNLOAD TO FILE FEATURE
+// ALLOW MULTIPLE DOWNLOADS
+// HANDLE RATE LIMITING(?)
+// ALLOW USER DEFINED SIZE
+// HANDLE BEING RUN AS TERMINAL GREETING MESSAGE(????)
+
 #[tokio::main]
 async fn main() -> Result<(), ExitFailure> {
     // Queries the API @ https://api.thecatapi.com/v1/images/search to get ImgData for a random cat image
