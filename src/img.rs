@@ -1,6 +1,7 @@
 #[cfg(any(target_os = "linux"))]
 use viuer::{print, Config};
-
+use std::fs::write;
+use std::path::Path;
 use serde::Deserialize;
 use exitfailure::ExitFailure;
 use reqwest::get;
@@ -19,15 +20,26 @@ impl ImgData {
         Ok(Some(img.0))
     }
     #[cfg(any(target_os = "linux"))]
-    pub async fn print_img(url: &String) -> Result<(), ExitFailure> {
+    pub async fn write_img(url: &String, width: u32, height: u32, noimg: bool, output: Option<String>) -> Result<(), ExitFailure> { 
         let img_bytes = get(url).await?.bytes().await?;
         let img = image::load_from_memory(&img_bytes)?;
         let conf = Config {
-            width: Some(25),
-            height: Some(16),
+            width: Some(width),
+            height: Some(height),
             ..Default::default()
         };
-        print(&img, &conf).expect("Image printing failed.");
+        
+        if !noimg {
+            //clear the screen
+            print!("\x1B[2J");
+            print(&img, &conf).expect("Image printing failed.");
+        }
+
+        if output.is_some() {
+            let output = output.unwrap();
+            let path = Path::new(output.as_str());
+            write(path, img_bytes).expect("Failed to write to file");
+        }
         Ok(())
     }
 }
