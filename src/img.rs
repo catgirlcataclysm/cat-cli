@@ -1,7 +1,11 @@
 use exitfailure::ExitFailure;
 use reqwest::get;
 use serde::Deserialize;
+
+#[cfg(target_os = "linux")]
 use std::fs::write;
+
+#[cfg(target_os = "linux")]
 use std::path::Path;
 
 #[cfg(target_os = "linux")]
