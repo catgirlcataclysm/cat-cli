@@ -4,10 +4,8 @@ mod args;
 mod img;
 
 // TODO
+// ALLOW MULTIPLE DOWNLOADS(?)
 
-// ALLOW MULTIPLE DOWNLOADS
-// HANDLE RATE LIMITING(?)
-// HANDLE BEING RUN AS TERMINAL GREETING MESSAGE(????)
 
 #[tokio::main]
 async fn main() -> Result<(), ExitFailure> {
