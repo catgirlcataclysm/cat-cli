@@ -23,8 +23,8 @@ impl ImgData {
         let img_bytes = get(url).await?.bytes().await?;
         let img = image::load_from_memory(&img_bytes)?;
         let conf = Config {
-            width: Some(128),
-            height: Some(72),
+            width: Some(25),
+            height: Some(16),
             ..Default::default()
         };
         print(&img, &conf).expect("Image printing failed.");
