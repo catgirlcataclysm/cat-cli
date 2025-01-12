@@ -1,11 +1,10 @@
-#[cfg(any(target_os = "linux"))]
-use viuer::{print, Config};
-use std::fs::write;
-use std::path::Path;
-use serde::Deserialize;
 use exitfailure::ExitFailure;
 use reqwest::get;
-
+use serde::Deserialize;
+use std::fs::write;
+use std::path::Path;
+#[cfg(any(target_os = "linux"))]
+use viuer::{print, Config};
 
 #[derive(Deserialize)]
 pub struct ImgData {
@@ -16,11 +15,20 @@ pub struct ImgData {
 
 impl ImgData {
     pub async fn fetch() -> Result<Option<ImgData>, ExitFailure> {
-        let img = get("https://api.thecatapi.com/v1/images/search").await?.json::<(ImgData,)>().await?;
+        let img = get("https://api.thecatapi.com/v1/images/search")
+            .await?
+            .json::<(ImgData,)>()
+            .await?;
         Ok(Some(img.0))
     }
     #[cfg(any(target_os = "linux"))]
-    pub async fn write_img(url: &String, width: u32, height: u32, noimg: bool, output: Option<String>) -> Result<(), ExitFailure> { 
+    pub async fn write_img(
+        url: &String,
+        width: u32,
+        height: u32,
+        noimg: bool,
+        output: Option<String>,
+    ) -> Result<(), ExitFailure> {
         let img_bytes = get(url).await?.bytes().await?;
         let img = image::load_from_memory(&img_bytes)?;
         let conf = Config {
@@ -28,7 +36,7 @@ impl ImgData {
             height: Some(height),
             ..Default::default()
         };
-        
+
         if !noimg {
             //clear the screen
             print!("\x1B[2J");
