@@ -1,6 +1,8 @@
 # cat-cli
 C. A. T. (Cat Acquiring Tool) for cli uses.
 
+completely forgot so i think i should mention this queries https://thecatapi.com
+
 ## Usage
 ```
 Usage: cat-cli [OPTIONS]
