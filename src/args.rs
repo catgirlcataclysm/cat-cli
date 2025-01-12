@@ -49,6 +49,7 @@ pub struct Args {
 pub async fn handle_args(img: &ImgData) {
     let args = Args::parse();
 
+    #[cfg(target_os = "linux")]
     crate::img::ImgData::write_img(&img.url, args.width, args.height, args.noimg, args.output)
         .await
         .expect("Failed printing to the terminal.");
