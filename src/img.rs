@@ -3,7 +3,8 @@ use reqwest::get;
 use serde::Deserialize;
 use std::fs::write;
 use std::path::Path;
-#[cfg(any(target_os = "linux"))]
+
+#[cfg(target_os = "linux")]
 use viuer::{print, Config};
 
 #[derive(Deserialize)]
@@ -21,7 +22,7 @@ impl ImgData {
             .await?;
         Ok(Some(img.0))
     }
-    #[cfg(any(target_os = "linux"))]
+    #[cfg(target_os = "linux")]
     pub async fn write_img(
         url: &String,
         width: u32,
