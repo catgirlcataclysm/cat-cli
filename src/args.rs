@@ -35,13 +35,19 @@ pub struct Args {
     )]
     pub height: u32,
 
-    #[arg(long, short = 'i', help = "Don't print the image in the terminal")]
+    #[arg(
+        long,
+        short = 'i',
+        help = "Don't print the image in the terminal",
+        group = "img"
+    )]
     pub noimg: bool,
 
     #[arg(
         long,
         short = 'o',
-        help = "Sets the output file for the image to be saved to"
+        help = "Sets the output file for the image to be saved to",
+        group = "img"
     )]
     pub output: Option<String>,
 }

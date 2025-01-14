@@ -6,7 +6,6 @@ mod img;
 // TODO
 // ALLOW MULTIPLE DOWNLOADS(?)
 
-
 #[tokio::main]
 async fn main() -> Result<(), ExitFailure> {
     // Queries the API @ https://api.thecatapi.com/v1/images/search to get ImgData for a random cat image
