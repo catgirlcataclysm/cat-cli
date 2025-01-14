@@ -46,8 +46,17 @@ pub struct Args {
         long,
         short = 'o',
         help = "Sets the output file for the image to be saved to",
+        group = "output"
     )]
     pub output: Option<String>,
+
+    #[arg(
+        long,
+        short = 'c',
+        help = "Sets the amount of images to be saved",
+        group = "output"
+    )]
+    pub count: Option<u8>
 }
 
 pub async fn handle_args(img: &ImgData) {
