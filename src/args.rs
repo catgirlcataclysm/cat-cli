@@ -39,7 +39,6 @@ pub struct Args {
         long,
         short = 'i',
         help = "Don't print the image in the terminal",
-        group = "img"
     )]
     pub noimg: bool,
 
@@ -47,7 +46,6 @@ pub struct Args {
         long,
         short = 'o',
         help = "Sets the output file for the image to be saved to",
-        group = "img"
     )]
     pub output: Option<String>,
 }
