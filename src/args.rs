@@ -23,7 +23,7 @@ pub struct Args {
         long,
         short = 'W',
         help = "Sets the width of the image displayed in the terminal",
-        default_value_t = 32
+        default_value_t = 0
     )]
     pub width: u32,
 
@@ -31,7 +31,7 @@ pub struct Args {
         long,
         short = 'H',
         help = "Sets the height of the image displayed in the terminal",
-        default_value_t = 18
+        default_value_t = 0
     )]
     pub height: u32,
 

@@ -37,6 +37,8 @@ impl ImgData {
         let img_bytes = get(url).await?.bytes().await?;
         let img = image::load_from_memory(&img_bytes)?;
         let conf = Config {
+            // this needs to be changed so that the image width and height are a clean division of
+            // the image's resolution
             width: Some(width),
             height: Some(height),
             ..Default::default()
