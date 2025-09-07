@@ -11,8 +11,8 @@ Options:
   -c, --nocolor          Print URL and Resolution text without color
   -u, --nourl            Don't print the URL of the image
   -r, --nores            Don't print the resolution of the image
-  -W, --width <WIDTH>    Sets the width of the image displayed in the terminal [default: 32]
-  -H, --height <HEIGHT>  Sets the height of the image displayed in the terminal [default: 18]
+  -W, --width <WIDTH>    Sets the width of the image displayed in the terminal
+  -H, --height <HEIGHT>  Sets the height of the image displayed in the terminal
   -i, --noimg            Don't print the image in the terminal
   -o, --output <OUTPUT>  Sets the output file for the image to be saved to
   -h, --help             Print help
