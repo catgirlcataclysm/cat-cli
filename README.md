@@ -3,7 +3,7 @@ C. A. T. (Cat Acquiring Tool) for cli uses.
 
 completely forgot so i think i should mention this queries https://thecatapi.com
 
-as of right now, libsixel is required on linux, i haven't bothered to make it detect it's presence (hopefully fixing this soon)
+as of right now, libsixel is required on linux, i haven't bothered to make it detect it's presence (hopefully fixing this soon(yay compsci))
 
 ## Usage
 ```
