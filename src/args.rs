@@ -8,15 +8,15 @@ use crate::img::ImgData;
 pub struct Args {
     #[arg(
         long,
-        short = 'nc',
+        short = 'C',
         help = "Print URL and Resolution text without color"
     )]
     pub nocolor: bool,
 
-    #[arg(long, short = 'nu', help = "Don't print the URL of the image")]
+    #[arg(long, short = 'U', help = "Don't print the URL of the image")]
     pub nourl: bool,
 
-    #[arg(long, short = 'nr', help = "Don't print the resolution of the image")]
+    #[arg(long, short = 'R', help = "Don't print the resolution of the image")]
     pub nores: bool,
 
     #[arg(
@@ -37,7 +37,7 @@ pub struct Args {
 
     #[arg(
         long,
-        short = 'ni',
+        short = 'I',
         help = "Don't print the image in the terminal",
     )]
     pub noimg: bool,
@@ -45,8 +45,8 @@ pub struct Args {
     #[arg(
         long,
         short = 'o',
-        help = "Sets the output file for the image to be saved to",
-        group = "output"
+        help = "Sets the output file for the image(s) to be saved to",
+        group = "save"
     )]
     pub output: Option<String>,
 
@@ -54,7 +54,7 @@ pub struct Args {
         long,
         short = 'c',
         help = "Sets the amount of images to be saved",
-        group = "output"
+        group = "save"
     )]
     pub count: Option<u8>
 }
