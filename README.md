@@ -10,12 +10,12 @@ as of right now, libsixel is required on linux, i haven't bothered to make it de
 Usage: cat-cli [OPTIONS]
 
 Options:
-  -c, --nocolor          Print URL and Resolution text without color
-  -u, --nourl            Don't print the URL of the image
-  -r, --nores            Don't print the resolution of the image
+  -nc, --nocolor          Print URL and Resolution text without color
+  -nu, --nourl            Don't print the URL of the image
+  -nr, --nores            Don't print the resolution of the image
   -W, --width <WIDTH>    Sets the width of the image displayed in the terminal
   -H, --height <HEIGHT>  Sets the height of the image displayed in the terminal
-  -i, --noimg            Don't print the image in the terminal
+  -ni, --noimg            Don't print the image in the terminal
   -o, --output <OUTPUT>  Sets the output file for the image to be saved to
   -h, --help             Print help
   -V, --version          Print version
