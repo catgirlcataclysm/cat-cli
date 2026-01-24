@@ -21,3 +21,8 @@ Options:
   -h, --help             Print help
   -V, --version          Print version
 ```
+
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=catgirlcataclysm/cat-cli&type=date&legend=top-left)](https://www.star-history.com/#catgirlcataclysm/cat-cli&type=date&legend=top-left)
